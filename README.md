@@ -1,0 +1,2 @@
+program çalıştırıldığında müşteri ve yönetici bilgsi istenir yönetici tıklanırsa şifre çıkar şifreyi girdikten sonra admin sayfasına erişebilrisin. Eriştikten sonra araç ekleme araç silme kiradaki araçları görme araba durumlarını görme gibi bilgiler hepsi bu sayfada mevcuttur.
+müşteri tıklanırsa vitrin sayfası açılır oradan arabaların bilgisi ve resimleri ile çıkar seçim yapılıp bilgiler girildikten sonra ödeme sayfasına atar ordanda bilgiler giril ödeme yapılrsa arabamız dolu durumuna düşer yöentici panelinden kimin kiraladığı gibi bilgileri görmemiz mümkündür
