@@ -320,21 +320,23 @@ namespace rentacar
                     komut.Parameters.AddWithValue("@p1", aracId);
 
                     SqlDataReader dr = komut.ExecuteReader();
-                    if (dr.Read()) 
+                    if (dr.Read())
                     {
                         MessageBox.Show("Müşteri: " + dr["MusteriAdSoyad"].ToString() +
-                      "\nTC: " + dr["TCKimlik"].ToString() +
-                      "\nTelefon: " + dr["Telefon"].ToString() +
-                      "\nPaket: " + dr["PaketSecimi"].ToString() +
-                      "\nGün Sayısı: " + dr["GunSayisi"].ToString() +  
-                      "\nToplam Tutar: " + dr["ToplamTutar"].ToString() + " TL","Kiralama Detayı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                          "\nTC: " + dr["TCKimlik"].ToString() +
+                          "\nTelefon: " + dr["Telefon"].ToString() +
+                          "\nPaket: " + dr["PaketSecimi"].ToString() +
+                          "\nGün Sayısı: " + dr["GunSayisi"].ToString() +  
+                          "\nİşlem Tarihi: " + dr["Tarih"].ToString() +    
+                          "\nToplam Tutar: " + dr["ToplamTutar"].ToString() + " TL",
+                          "Kiralama Detayı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     bgl.Baglanti().Close();
                 }
             }
-            catch (Exception)
+            catch (Exception hata)
             {
-               
+                MessageBox.Show("Detay getirme hatası: " + hata.Message);
             }
         }
         void IstatistikGetir()

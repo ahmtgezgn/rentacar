@@ -128,9 +128,9 @@ namespace rentacar
             try
             {
                 SqlBaglantisi bgl = new SqlBaglantisi();
-                SqlCommand komutSatis = new SqlCommand("INSERT INTO Hareketler (AracID, MusteriAdSoyad, ToplamTutar, TCKimlik, PaketSecimi, Telefon) VALUES (@h1, @h2, @h3, @h4, @h5, @h6)", bgl.Baglanti());
+                SqlCommand komutSatis = new SqlCommand("INSERT INTO Hareketler (AracID, MusteriAdSoyad, ToplamTutar, TCKimlik, PaketSecimi, Telefon, GunSayisi, Tarih) VALUES (@h1, @h2, @h3, @h4, @h5, @h6, @h7, @h8)", bgl.Baglanti());
                 komutSatis.Connection = bgl.Baglanti();
-                komutSatis.CommandText = "INSERT INTO Hareketler (AracID, MusteriAdSoyad, ToplamTutar, TCKimlik, PaketSecimi, Telefon) VALUES (@h1, @h2, @h3, @h4, @h5, @h6)";
+                komutSatis.CommandText = "INSERT INTO Hareketler (AracID, MusteriAdSoyad, ToplamTutar, TCKimlik, PaketSecimi, Telefon, GunSayisi ,Tarih) VALUES (@h1, @h2, @h3, @h4, @h5, @h6, @h7, @h8)";
 
                 // 2. PARAMETRELERİ DOĞRULARIYLA EŞLEŞTİR
                 komutSatis.Parameters.AddWithValue("@h1", gelenAracId);
@@ -144,6 +144,7 @@ namespace rentacar
                 komutSatis.Parameters.AddWithValue("@h5", gelenPaket);   
                 komutSatis.Parameters.AddWithValue("@h6", gelenTelefon);
                 komutSatis.Parameters.AddWithValue("@h7", gelenGun);
+                komutSatis.Parameters.AddWithValue("@h8", DateTime.Now);
                 komutSatis.ExecuteNonQuery();
 
                 SqlCommand komutDurum = new SqlCommand("UPDATE Araclar SET Durum='Dolu' WHERE AracID=@p1", bgl.Baglanti());
