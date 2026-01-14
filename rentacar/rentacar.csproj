@@ -52,6 +52,7 @@
     <Compile Include="AnaMenu.Designer.cs">
       <DependentUpon>AnaMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="AracYonetimi.cs" />
     <Compile Include="FrmAdminGiris.cs">
       <SubType>Form</SubType>
     </Compile>
